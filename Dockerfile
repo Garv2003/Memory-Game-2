@@ -1,6 +1,7 @@
-FROM jarredsumner/bun:latest
+FROM oven/bun:latest
 WORKDIR /app
-COPY . .
+COPY package.json bun.lockb ./
 RUN bun install
+COPY . .
 EXPOSE 5173
-CMD ["bun", "run","dev"]
+CMD ["bun", "run", "dev"]
